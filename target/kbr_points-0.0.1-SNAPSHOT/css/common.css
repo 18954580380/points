@@ -1,0 +1,154 @@
+@charset "utf-8"; 
+
+/*公用图片调用*/
+.bg{background: url(../img/login/bg.png) no-repeat;}
+
+/*login*/
+.login{position: relative;margin-top: 140px;}
+.login .body{height:600px;background:url(../img/login/login_bg.jpg) repeat-x;}
+.login .body .box2{width:1000px; margin:0 auto; height:600px;background:url(../img/login/login.jpg) no-repeat;}
+.login .footer{padding-top: 20px;}
+.login .header{height:44px;line-height:44px;padding: 6px 0 12px;}
+.login .body .banner{text-align: center;margin:0 auto;}
+.login .box1{width:970px;padding-right:30px;margin: 0 auto;}
+.login .header .txt{display:inline-block;height:28px;line-height:28px;font-size:16px;color: #717171;border-left:solid 1px #d2d2d2; padding-left:12px;margin: 8px 0 0 13px;}
+.login_box{float: right;width:245px;height:400px;padding: 0 25px;margin-top: 95px;}
+.login_box h1{padding:25px 0 20px;font-size:18px;}
+.login_box.bg{background-position: right top;}
+ul.user_login li{padding-bottom: 14px;position:relative;}
+.user_pic,.user_pw{display: block;height: 15px;width:14px;position: absolute;right:10px;top:12px;background-position: -117px 0;}
+.user_pw{background-position: -150px 0;}
+.login .banner_btn{position: absolute;bottom: 25px;right:20px;}
+.login .banner_btn li{float: left;padding-left: 10px;}
+.login .banner_btn span{display: inline-block;text-indent: -9999px;}
+.login .codeimg{margin-top: 10px; }
+.login .codeimg p{padding: 22px 0 0 25px;line-height: 30px;color: #050816;}
+.login_box input.input01{color: #9ea0a0;padding-right: 25px;}
+.login_box .btn100{width: 247px;line-height: 38px; border-radius:3px; background-color: #00798f; color:#fff;font-size: 14px;text-align: center;}
+.login_box a.btn100{text-decoration: none;}
+.login .validcode_span{display: block;height: 28px;width:84px;position: absolute;right:6px;top:5px;}
+.login .input_login{width:235px;border:solid 1px #d6d6d6;height:24px;line-height:24px;padding:5px;color: #494949;background: #fff;}
+.login input,label { vertical-align:middle;}
+
+/*role_allocation*/
+.table > thead > tr > td{line-height: 30px; padding: 3px; vertical-align: middle;}
+.table > tbody > tr.table_input > td{padding: 4px 4px; vertical-align: middle;}
+.table > tbody > tr.table_input > td .input input{line-height: 20px; height: 27px; padding: 3px 3px; vertical-align: middle;}
+.table-btn{font: 15/29px; height: 31px; margin: 5px 0 0 5px; padding: 0 22px;}
+.role{width: 220px; height: 500px; overflow: auto; background: #e6f2e1; border: 1px #ccc solid;}
+.select01{height: 32px;line-height: 32px;border:1px solid #bdbdbd;}
+.loan_line{height: 30px;line-height: 30px;border-bottom:1px solid #dbdbdb;margin-top:20px;margin-bottom: 10px;padding-left:20px;font-weight: bold;}
+.boxmini{width:10px;height: 10px;border:1px solid #c2c2c2;background-color:#f2f2f2;display: inline-block;}
+.table-nobg-btn{font: 15/29px; height: 31px !important; line-height: 31px !important; margin: 7px 7px 7px 0 !important; padding: 0 22px !important;}
+
+.box1, .box2, .box3{display: none}
+/*radio*/
+#hd[checked='checked']+.box1{display: block}
+#jxq:checked+.box2{display: block}
+#swsp:checked+.box3{display: block}
+
+.stepbar {
+  font-size: 0px;
+  overflow: hidden;
+  line-height: 0px;
+  margin: 18px 0px;
+  padding: 0px 6px;
+}
+.stepbar > div {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.stepbar > div .wrap:before,
+.stepbar > div .wrap:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.stepbar > div .wrap:after {
+  clear: both;
+}
+.stepbar > div > label {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 12px;
+  height: 12px;
+  margin-top: 6px;
+  color: #28a3ef;
+  cursor: default;
+  text-align: center;
+  width: 50%;
+  margin-left: -25%;
+  position: relative;
+  left: 15px;
+}
+.stepbar > div:first-child > label {
+  width: auto;
+  max-width: 50%;
+  margin-left: 0;
+  left: 0;
+}
+.stepbar > div:last-child,
+.stepbar > div.last {
+  width: 30px !important;
+}
+.stepbar > div:last-child > label,
+.stepbar > div.last > label {
+  position: absolute;
+  width: auto;
+  margin-left: 0;
+  left: auto;
+  right: 0;
+}
+.stepbar > div .round {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  color: #FFF;
+  line-height: 20px;
+  text-align: center;
+  float: left;
+}
+.stepbar > div .bar {
+  margin: 10px 10px 0px 40px;
+  width: 200px;
+  height: 6px;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.stepbar > .finished .round {
+  border: 4px #28a3ef solid;
+  background-color: #28a3ef;
+  color: #ffffff;
+}
+.stepbar > .finished .bar {
+  background-color: #28a3ef;
+}
+.stepbar > .current .round {
+  border: 4px #4cb9fc solid;
+  background-color: #4cb9fc;
+}
+.stepbar > .current .bar {
+  background-color: #4cb9fc;
+}
+.stepbar > .todo > label {
+  color: #999999;
+}
+.stepbar > .todo .round {
+  border: 4px #d3d3d3 solid;
+  background-color: #FFF;
+  color: #999999;
+}
+.stepbar > .todo .bar {
+  background-color: #eeeeee;
+}

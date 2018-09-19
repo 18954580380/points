@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.koboro.points.repository.ActivityRewardStrategyMapper">
+    <!--查询所有活动奖励策略-->
+    <select id="findActivityRewardStrategyByStatus" resultType="cn.koboro.points.pojo.entity.ActivityRewardStrategy"  parameterType="java.lang.Integer" >
+				SELECT * FROM koboro_activity_reward_strategy WHERE 1=1
+				<if test="status==1">
+                    and  Date(reward_grant_start_time)&gt;now()
+                </if>
+				<if test="status==2">
+                    and  Date(reward_grant_start_time) &lt;=now()
+                    and now()  &lt;= Date(reward_grant_end_time)
+                </if>
+				<if test="status==3">
+                    and now()  &gt; Date(reward_grant_end_time)
+                </if>
+	 </select>
+</mapper>

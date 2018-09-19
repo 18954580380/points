@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.koboro.points.repository.UserPointsRecordMapper">
+    <select id="findPointsDetail" resultType="java.util.Map">
+     SELECT SUM(points) points,source FROM koboro_user_points_record GROUP BY source
+    </select>
+</mapper>

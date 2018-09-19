@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.koboro.points.repository.UserEmpiricalValueTotalDetailMapper">
+    <!--查询用户经验值等级-->
+    <select id="findUserLeve" parameterType="java.lang.String" resultType="java.util.Map">
+    SELECT l.user_level,l.user_title,d.total_empirical_value,l.id FROM  koboro_user_empirical_value_total_detail d JOIN koboro_empirical_value_level l ON d.empirical_value_level_id=l.id WHERE d.archival_number=#{archivalNumber}
+    </select>
+</mapper>

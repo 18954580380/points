@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.koboro.points.repository.GoodsRewardStrategyGoodsRelationMapper">
+  <!--  根据商品奖励策略id删除关联的商品表-->
+    <delete id="deleteByGoodsRewardStrategyId"
+            parameterType="java.lang.Integer" >
+          delete  from  koboro_goods_reward_strategy_goods_relation where goods_reward_strategy_id=#{id}
+    </delete>
+
+    <!--根据商品奖励策略查询关联的活动-->
+    <select id="findGoodsRewardStrategyGoodsRelation" parameterType="java.lang.Integer" resultType="cn.koboro.points.pojo.entity.GoodsRewardStrategyGoodsRelation">
+          SELECT * FROM koboro_goods_reward_strategy_goods_relation WHERE goods_reward_strategy_id =#{id}
+    </select>
+
+    <!--查询所有商品奖励策略关联的的商品-->
+    <select id="selectAllGoodsRewardStrategyGoodsRelation"  resultType="cn.koboro.points.pojo.entity.GoodsRewardStrategyGoodsRelation">
+          SELECT gr.* FROM  koboro_goods_reward_strategy rs JOIN koboro_goods_reward_strategy_goods_relation gr ON rs.id=gr.goods_reward_strategy_id WHERE rs.is_delete=0
+    </select>
+</mapper>

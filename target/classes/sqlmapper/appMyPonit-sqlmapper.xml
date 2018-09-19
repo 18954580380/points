@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.koboro.points.repository.AppMyPonitMapper">
+    <!-- 查询是否存在用户积分表 -->
+    <select id="findUserPointsTotalDetail" parameterType="java.lang.Object" resultType="cn.koboro.points.pojo.entity.UserPointsTotalDetail">
+    SELECT * FROM koboro_user_points_total_detail WHERE archival_number=#{archivalNumber}
+    </select>
+   <!--查询我得总积分 -->
+   <select id="findMyTotleIntegral" parameterType="java.lang.String" resultType="java.util.Map">
+     select * from koboro_user_points_record where archival_number=#{archivalNumber} order by create_time DESC
+   </select>
+   <!-- 查询今日新增积分 -->
+   <select id="findAddIntegral"  parameterType="java.lang.Object" resultType="java.lang.Integer">
+     select sum(points) from koboro_user_points_record where archival_number=#{archivalNumber} and date(create_time)=date(#{nowTime}) and type=1
+   </select>
+   <!-- 查询积分失效时间和比率 -->
+   <select id="findIntegralSetting"  resultType="java.util.Map">
+     SELECT * FROM koboro_points_whole_situation_setting WHERE STATUS=0
+   </select>
+   <!-- 查询最近消费获取的积分 -->
+   <select id="findGetIntegral"  resultType="java.lang.Integer" parameterType="java.lang.Object">
+    select sum(points) from koboro_user_points_record where archival_number=#{archivalNumber} and date(create_time)&gt;=date(#{time}) and type=#{type}
+   </select>
+    <!-- 更新积分池积分 -->
+   <update id="updatePointsPool">
+    UPDATE koboro_points_pool SET points=points-#{points} where id=1;
+   </update>
+</mapper>

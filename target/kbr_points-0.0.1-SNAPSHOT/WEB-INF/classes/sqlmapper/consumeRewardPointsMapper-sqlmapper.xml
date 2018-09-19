@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.koboro.points.repository.ConsumeRewardPointsMapper">
+    <!--查询所有-->
+    <select id="selectAllAndGood" resultType="cn.koboro.points.pojo.entity.PointsExpenseStrategy"  >
+				SELECT
+					p.*,
+				(select count(1) from koboro_points_expense_strategy_goods_relation g where g.points_expense_strategy_id=p.id) goodsCount
+				FROM
+					koboro_points_expense_strategy p
+	 </select>
+</mapper>

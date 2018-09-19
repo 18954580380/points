@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.koboro.points.repository.PointsWholeSituationSettingMapper">
+    <!--查询当前使用积分池规则清算比-->
+    <select id="findRatioPoints" resultType="java.lang.Integer"  >
+     SELECT  ratio_points FROM koboro_points_whole_situation_setting WHERE STATUS=0
+	</select>
+    <!--更新其它策略为失效状态-->
+    <update id="updateStatus">
+        update  koboro_points_whole_situation_setting set status=1 where status=0
+    </update>
+    <!--查询实体-->
+    <select id="findPointsWholeSituationSetting" resultType="cn.koboro.points.pojo.entity.PointsWholeSituationSetting"  >
+     SELECT  * FROM koboro_points_whole_situation_setting WHERE STATUS=0
+	</select>
+</mapper>
